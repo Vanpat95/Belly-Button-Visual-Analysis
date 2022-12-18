@@ -26,7 +26,7 @@ function charts(sample) {
         x: otu_ids,
         y: sample_values,
         
-        type: "bubble"
+        type: "bar"
       };
     
     // Data trace array
@@ -38,34 +38,31 @@ function charts(sample) {
     };
     
     // Render the plot to the div tag with id "plot"
-    Plotly.newPlot("bubble", traceData, layout);
+    Plotly.newPlot("bar", traceData, layout);
     
+
+    let trace2 = {
+        x: otu_ids,
+        y: sample_values,
+        type: "bubble"
+      };
+      
+      // Data trace array
+      let traceData2 = [trace2];
+      
+      // Apply the group barmode to the layout
+      let layout2 = {
+      title: "Bellybutton Bubble Chart"
+      };
+      
+      // Render the plot to the div tag with id "plot"
+      Plotly.newPlot("bubble", traceData2, layout2);
 
 
     })
 }
 
-// let trace1 = {
-//   x: otu_ids,
-//   y: sample_values,
-//   type: "bubble"
-// };
 
-// // Data trace array
-// let traceData = [trace1];
-
-// // Apply the group barmode to the layout
-// let layout = {
-// title: "Bellybutton Bar Chart"
-// };
-
-// // Render the plot to the div tag with id "plot"
-// Plotly.newPlot("bubble", traceData, layout);
-
-
-
-// })
-// }
 
 
 function init(){
